@@ -10,6 +10,8 @@ import socket
 import sys
 import getopt
 import os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 help_message = '''
 To use, fill out config.yml with your own participants. You can also specify 
