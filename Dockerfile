@@ -1,4 +1,4 @@
-FROM python:2-slim
+FROM python:3-slim
 
 WORKDIR /src
 
@@ -8,5 +8,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+ENTRYPOINT ["python", "main.py"]
 #ENTRYPOINT ["python", "secret_santa.py"]
 
