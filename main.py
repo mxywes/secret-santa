@@ -171,11 +171,9 @@ call with the --send argument:
             text = config['MESSAGE-TEXT'] % (pair.giver.name, pair.reciever.name)
             # html_header = config['MESSAGE-HTML-HEAD']
             html = html_header + (config['MESSAGE-HTML'] % (pair.giver.name, pair.reciever.name))
-            print(html)
             msg.attach(MIMEText(text, 'plain'))
             msg.attach(MIMEText(html, 'html'))
-            
-            # print(msg)
+        
             
             if send:
                 result = server.sendmail(msg['From'], [msg['To']], msg.as_string())
