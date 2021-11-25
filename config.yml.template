@@ -1,9 +1,8 @@
-# Required to connect to your outgoing mail server. Example for using gmail:
-# gmail
-SMTP_SERVER: smtp.gmail.com
+# Required to connect to your outgoing mail server. 
+SMTP_SERVER: smtp.example.com
 SMTP_PORT: 587
-USERNAME: you@gmail.com
-PASSWORD: "you're-password"
+USERNAME: you@example.com
+PASSWORD: "your-password"
 
 TIMEZONE: 'US/Pacific'
 
@@ -21,15 +20,17 @@ DONT-PAIR:
   - Bill, Sharon
 
 # From address should be the organizer in case participants have any questions
-FROM: You <you@gmail.net>
+FROM: You <you@example.net>
 
-# Both SUBJECT and MESSAGE can include variable substitution for the 
+#SUBJECT can include variable substitution for the 
 # "santa" and "santee"
 SUBJECT: Your secret santa recipient is {santee}
-MESSAGE: 
-  Dear {santa},
+
+#MESSAGE-TEXT and MESSAGE-HTML needs %s for santa and santee variable substitution
+MESSAGE-TEXT:
+  Dear %s,
   
-  This year you are {santee}'s Secret Santa!. Ho Ho Ho!
+  This year you are %s's Secret Santa!. Ho Ho Ho!
   
   The maximum spending limit is 50.00
   
@@ -39,4 +40,7 @@ MESSAGE:
   Nothing could possibly go wrong...
   
   http://github.com/underbluewaters/secret-santa
+#Write only body part of the HTML message, header part are in html_head.html file
+MESSAGE-HTML:
+  <body><div>For %s, you are %s's secret santa!</div></body>
   
