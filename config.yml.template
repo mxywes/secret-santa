@@ -41,6 +41,7 @@ MESSAGE-TEXT:
   
   http://github.com/underbluewaters/secret-santa
 #Write only body part of the HTML message, header part are in html_head.html file
+#For plain text only message, leave the following entry empty
 MESSAGE-HTML:
   <body><div>For %s, you are %s's secret santa!</div></body>
   
